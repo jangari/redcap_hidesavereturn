@@ -1,6 +1,6 @@
 # HIDESAVERETURN
 
-This REDCap External Module allows users to conditionally the Save & Return Later button on surveys using Action Tags and branching logic.
+This REDCap External Module allows users to conditionally hide the Save & Return Later button on surveys using Action Tags and branching logic.
 
 This action tag is used on descriptive text fields whose visibility on the survey will prevent the visibility of the Save & Return Later button.
 
