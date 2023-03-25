@@ -1,0 +1,20 @@
+{
+    "name": "HIDESAVERETURN",
+    "namespace": "INTERSECT\\HideSaveReturn",
+    "description": "Allows users to conditionally hide the Save and Return button on surveys.",
+    "permissions": [
+        "redcap_survey_page_top",
+        "redcap_every_page_before_render"
+    ],
+    "framework-version": 8,
+    "authors": [
+        {
+            "name": "Aidan Wilson",
+            "email": "aidan.wilson@intersect.org.au",
+            "institution": "Intersect Australia"
+        }
+    ],
+    "compatibility": {
+        "redcap-version-min": "11.1.1"
+    }
+}
