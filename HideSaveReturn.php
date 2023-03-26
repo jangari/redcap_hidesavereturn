@@ -57,23 +57,18 @@ public function redcap_every_page_before_render($project_id) {
         $currInstrumentFields = REDCap::getFieldNames($instrument);
 
         // Define the action tag
-        $hideSaveReturnTag = "@HIDESAVERETURN"
+        $hideSaveReturnTag = "@HIDESAVERETURN";
 
         // construct an array of fields annotated with the tag
         $hideSaveReturnFields = array();
 
-            $fields = $this->getTags($hideSaveReturnTag);
-            if (empty($fields)) continue;
-            $fields = array_keys($fields[$hideSaveReturnTag]);
-            $hideSubmitFields = array_merge((array)$hideSaveReturnFields,(array)$fields); 
+        $fields = $this->getTags($hideSaveReturnTag);
+        if (empty($fields)) return;
+        $fields = array_keys($fields[$hideSaveReturnTag]);
+        $hideSaveReturnFields = array_merge((array)$hideSaveReturnFields,(array)$fields); 
 
+        // Return the intersection of those two arrays
         $hideSaveReturnFields = array_values(array_intersect((array)$hideSaveReturnFields, (array)$currInstrumentFields));
-
-
-        // Decide whether to continue
-        if (count($hideSaveReturnFields) === 0) { 
-            return; 
-        }
 
         // Create a JS array to feed into our JS script
         echo "<script type=\"text/javascript\">const hideSaveReturnFields = [];";
@@ -91,9 +86,9 @@ public function redcap_every_page_before_render($project_id) {
                         };
                     });
                         if (hideSaveReturn > 0) {
-                            $('button[name=\"submit-btn-savereturnlater\"]').hide();
+                            $('button[name=\"submit-btn-savereturnlater\"]').parent().parent().hide();
                         } else {
-                            $('button[name=\"submit-btn-savereturnlater\"]').show();
+                            $('button[name=\"submit-btn-savereturnlater\"]').parent().parent().show();
                         };
                     };
                 hideSaveReturnButton(hideSaveReturnFields);
