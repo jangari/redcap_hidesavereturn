@@ -2,11 +2,13 @@
     "name": "HIDESAVERETURN",
     "namespace": "INTERSECT\\HideSaveReturn",
     "description": "Allows users to conditionally hide the Save and Return button on surveys.",
-    "permissions": [
-        "redcap_survey_page_top",
-        "redcap_every_page_before_render"
+    "framework-version": 12,
+    "action-tags": [
+        {
+            "tag": "@HIDESAVERETURN",
+            "description": "Hides the 'Save and Return Later' button on surveys <em>if the field is visible due to branching logic</em>."
+        }
     ],
-    "framework-version": 11,
     "authors": [
         {
             "name": "Aidan Wilson",

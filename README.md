@@ -43,3 +43,4 @@ These instructions are also available in [GitHub]( https://github.com/jangari/re
 | Version | Description                                                                                           |
 | ------- | --------------------                                                                                  |
 | v1.0.0  | Initial release.                                                                                      |
+| v1.1.0  | Migrated to EM Framework built-in support for Action Tag help dialgue  |
